@@ -1,0 +1,31 @@
+import java.util.*;
+public class KnightPositionFinder 
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("ENTER POSITION OF KNIGHT (EXAMPLE A1)");
+        Scanner sc = new Scanner(System.in);
+        String p = sc.nextLine().toUpperCase();
+        int arr[] = {-2,-1,1,2,-2,-1,1,2};
+        int arr2[] = {-1,-2,2,1,1,2,-2,-1};
+        char ap = p.charAt(0); //find value of alphabetical position
+        char nump = p.charAt(1);
+        String numpp= nump + "";
+        numpp = numpp.trim();
+        int np = Integer.parseInt(numpp); //find value of numerical position
+        for(int i = 0; i<= 7; i++) 
+        {
+                   if(ap+arr[i] > 'A' - 1 && ap + arr[i] < 'H' + 1 && np+arr2[i] >  0 && np + arr2[i] < 9)
+                    {
+                        
+                      System.out.print((char)(ap+arr[i]));
+                      
+    
+                        
+                       System.out.print(np+arr2[i]);
+                    }
+                    System.out.println();
+        }
+    }
+}
+
